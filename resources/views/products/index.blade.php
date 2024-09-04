@@ -27,29 +27,31 @@
         <div class="text-right">
             <a href="{{ route('products.create') }}" class="btn btn-dark mt-3 mb-3">New Product</a>
         </div>
-    
+
         <table class="table">
-    <thead>
-        <tr>
-            <th scope="col">Sno.</th>
-            <th scope="col">Product Name</th>
-            <th scope="col">Description</th>
-            <th scope="col">Image</th>
-            <th scope="col">Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($products as $product)
-        <tr>
-            <td>{{ $loop->iteration }}</td>             
-            <td>{{ $product->name }}</td>             
-            <td>{{ $product->description }}</td>
-            <td><img src="products/{{ $product->image }}" class="rounded-circle" style="width: 80px; height: 80px"></td>
-            <td><button mt-3>Edit</button><button>Delete</button></td>
-        </tr>         
-        @endforeach 
-    </tbody>
-</table>
+            <thead>
+                <tr>
+                    <th scope="col">Sno.</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($products as $product)
+                <tr>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $product->name }}</td>
+                    <td>{{ $product->description }}</td>
+                    <td><img src="products/{{ $product->image }}" class="rounded-circle" style="width: 50px; height: 50px"></td>
+                    <td>
+                        <a href="products/{{ $product->id }}/edit" class="btn btn-dark btn-sm">Edit</a>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
 
     </div>
 
